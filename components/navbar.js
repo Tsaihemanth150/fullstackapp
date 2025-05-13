@@ -88,7 +88,7 @@ const NavBar = ({ user, setUser, notificationsCount = 3 }) => {
                     </li>
                     <li>
                       <Link
-                        href="/Sign Up"
+                        href="/singup"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
                         Sign Up
