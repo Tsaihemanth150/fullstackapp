@@ -2,8 +2,9 @@ name: Build and Deploy to ECS
 
 on:
   push:
-    branches:
-      - main  # Trigger only on main branch push
+    tags:
+      - 'v*.*.*'  # Trigger on version tags
+
 
 env:
   AWS_REGION: us-east-1                     # Set your AWS region
