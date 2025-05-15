@@ -1,6 +1,6 @@
 // pages/api/checkdbhealth.js
 
-import { connect } from "@/dbConfig/dbConfig"; // Import the connect function from your database utility file
+import { connect } from '@/db/dbConfig'; // Import the connect function from your database utility file
 
 export default async function handler(req, res) {
   try {
