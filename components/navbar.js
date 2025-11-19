@@ -32,7 +32,7 @@ const NavBar = ({ user, setUser, notificationsCount = 3 }) => {
         <Link href="/" className="flex items-center space-x-2">
          
           <span className="text-2xl font-semibold text-blue-700 dark:text-white">
-            DevOps Demo
+            Kube Demo
           </span>
         </Link>
 

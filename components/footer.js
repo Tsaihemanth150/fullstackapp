@@ -13,7 +13,7 @@ export default function Footer() {
                 
               </div>
               <span className="self-center ml-3 text-2xl font-semibold whitespace-nowrap dark:text-white">
-                  DevOps Demo
+                  Kube Demo
               </span>
             </Link>
           </div>

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demoapp
+  labels:
+    app: demoapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demoapp
+  template:
+    metadata:
+      labels:
+        app: demoapp
+    spec:
+      # If you DID NOT attach the ACR to AKS with `az aks update --attach-acr`,
+      # uncomment the following line and create an imagePullSecret named 'acr-pull-secret'.
+      # imagePullSecrets:
+      # - name: acr-pull-secret
+
+      containers:
+      - name: demoapp-container
+        # Use your ACR login server here: <ACR_LOGIN_SERVER>/<repository>:<tag>
+        # Example: vishwadristi.azurecr.io/demoapp:latest
+        image: vishwadristi.azurecr.io/demoapp:v1
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: Token_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: Token_SECRET
+        - name: MONGO_URI
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: MONGO_URI     
+        ports:
+        - containerPort: 3000
+
